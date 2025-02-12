@@ -1,0 +1,76 @@
+Sequence of GPT papers published by openAI:
+
+Attention Is All You Need - 2017
+
+1. Improving language understanding with unsupervised learning - 2018 (GPT 1)
+2. Language Models are Unsupervised Multitask Learners - 2019 (GPT 2)
+3. Language Models are Few-Shot Learners - 2020 (GPT 3)
+
+
+
+Zero shot vs One shot vs Few shot Learning:
+
+Zero shot:
+    Model predicts the answer given only a natural language description of the task. No gradient updates are performed.
+
+    Task Description --> Translate English to French
+    cheese => ?
+
+One Shot:
+    In addition to task description, the model sees a single example of the task. No gradient updates are performed.
+
+    Task Description --> Translate English to French
+    Example --> sea otter => loutre de mer
+    cheese => ?
+
+Few Shot:
+    In addition to task description, the model sees a few examples of the task. No gradient updates are performed.
+
+    Task Description --> Translate English to French
+    Examples --> sea otter => loutre de mer
+                pepperming => menthe poivree
+                plush girafe => girafe peluche
+
+    cheese => ?
+
+
+Datasets:
+
+Common Crawl - ~250 billion pages spanning 17 years (free and open source)
+webtext2 - reddit submissions from 2005 up until 2020
+wikipedia
+
+
+
+Token: Is a unit of text which the model reads. 1 token =  word
+
+Pretrained models = Foundation models, which can then be finetuned for specific use task for better accuracy.
+
+
+
+
+GPT Architecture:
+
+GPT models are simply trained on "next-word" tasks.
+    i.e. The lion roams in the __
+                               Jungle
+                              (next word)
+
+Next word prediction: self supervised learning
+                        self labeling. 
+                     i.e. the sentence is broken down into two parts:
+                        1. First part as input
+                        2. each word of second part sequentially as output to predict, given the first word.
+
+Data is not labelled for training, rather the next word in the sentence is used as label.  ---> Auto Regressive -- use previous outputs as inputs for future predictions.
+
+There are no encoders. Only Decoders
+        [Original Transformer paper: 6 encoder - decoder blocks]
+    GPT 3 has 96 transformer layers - 175 billion parameters
+
+
+
+Emergent behaviour:
+    Althout originally trained for predicting next word, it can perform other tasks such as language translation, summarization, etc. without finetuning on these tasks.
+
+

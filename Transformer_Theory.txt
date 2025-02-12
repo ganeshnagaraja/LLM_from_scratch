@@ -1,0 +1,76 @@
+Intro to Transformers:
+
+Paper: Attention Is All You Need
+
+This paper introduced the transformer architecture.
+It was first used for machine translation task.
+
+
+
+Step 1: English Text "Hello, my name is Ganesh"
+
+Step 2: Tokenization - converting words into unique set of numbers/ids
+
+Step 3: Encoder - tokens are converted into vector embedding. In this step the sematic meaning of similar words are considered. 
+        While tokenizing, similar words like dog and puppy will have random ids. Words are converted into vectorized representations (vector embedding). 
+        i.e. all the similar words in meaning are closer to each other in the vector map. apple, banana, orange vector embeddings will be closer to each other. 
+        football, golf, tennis will be closer to each other. Semantic meaning of words are captured.
+
+Step 4: Emebedding output is fed into decoder
+
+Step 5: Partial outuput text i.e to be fed into the decoder. Model completes one word at a time. For E.x. "What are you"
+
+Step 6: Text is preprocessed for decoder.
+
+Step 7: Decoder - Receives 2 inputs: embedding vector from the encoder and the partial output text that needs to be completed.
+
+Step 8: Transformer model trained to predict the next word. 
+
+Step 9: "What are you doing?" - predicted text from the model
+
+
+Attention:
+
+Self Attention:
+1. Allows model to weigh importance of different words/tokens relative to each other.
+2. Enables model to capture long range dependencies
+
+
+Different variants of Transformer models: BERT and GPT:
+
+BERT: Bidirectional Encoder Representations from Transformers
+
+Predicts hidden words in a given sentence (fills missing words)
+
+Working:
+
+Step 1: Input example sentence - "This is _ beautiful flower"
+
+Step 2: preprocessing Steps
+
+Step 3: Encoder
+
+Step 4: output - "This is a beautiful flower"
+
+
+GPT: Generative Pretrained Transformers
+
+Predicts the next word in a sentence. predicts one word at a time
+
+Working:
+
+Step 1: Input example sentence - "This is a beautiful _"
+
+Step 2: preprocessing steps
+
+Step 3: Decoder
+
+Step 4: output - "This is a beautiful flower"
+
+
+
+
+
+
+
+

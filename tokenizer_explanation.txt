@@ -1,0 +1,51 @@
+Tokenizers:
+
+3 types:
+    Word based, sub-word based, character based
+
+word based - tokenizer implemented in tokenizer.py is word based tokenizer. i.e. each word is converted into a token.
+             issue: what happens when out of vocabulary (OOV) words appear in sentences.
+                    different meaning of similar words [boys, boy] --> they may have vector embeddings that are far away although similar in meaning
+
+Character based - Individual characters are tokenized.
+                  Solves OOV problem. 
+                  issue: Very small vocabulary. Every language has fixed number of characters (english ~256)
+                         Meaning associated with words is completely.
+                         The tokenized sequence is longer that original raw text.
+
+Sub-word based - Byte Pair Encoding (BPE) is an example of sub-word tokenizer.
+                 Rules:
+                        1. Do not split frequently used words into smaller sub words
+                        2. Split rare words into smaller, meaningful subwords
+
+                 Eg. "boy" shouldn't be split. 
+                     "boys" should be split into "boy" & "s"
+
+                 This method helps model in understanding words with same root word.
+                    Eg. Tokenizer, Tokens, etc. 
+                
+                It also helps model learn that "tokenization" and "modernization" are made up of different root words but have
+                same suffix "ization" and are used in same syntactic situations.
+
+
+
+Byte Pair Encoding (BPE):
+            
+            Most common pair of consecutive bytes of data is replaced with a byte that does not occur in data.
+
+            Eg. Original data: aaabdaaabac
+
+                1. byte pair "aa" occurs the most. We will replace it with Z as Z does not occur in data.
+
+                Compressed data - ZabdZabac
+
+                2. Next common byte pair is "ab". We will replace this by Y
+
+                Compressed data - ZYdZYac
+
+                3. Next common byte pair is "ZY", we will replace this by W
+
+                Compressed data - WdWac
+
+
+

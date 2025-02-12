@@ -1,0 +1,13 @@
+LLM Data Preprocessing
+
+4 steps:
+
+1. Tokenization: Word Based
+                 Char Based
+                 Sub-Word Based -- Byte-Pair Tokenizer
+
+2. Token Embeddings: Convert Token IDs to Vectors    
+
+3. Positional Embeddings: Encoding information about Positional
+
+4. Input Embeddings: Token Embeddings + Positional Embeddings

@@ -1,0 +1,9 @@
+# Last step before creating vector embeddings is to create input output pairs.
+
+Given a text sample, extract input blocks as subsamples that serve as input to the LLM.
+The LLM prediction task during training is to predict the next word that follows the input block.
+
+During training we mask all words that are beyond/past the target word.
+
+context size - length of input. ie context size of 4 means that the model was trained to look at a sequence of 4 words to predict the next word.
+

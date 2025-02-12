@@ -1,0 +1,57 @@
+LLM - NN designed to understand, generate and respond to human like text
+
+NN - Neural Network --> Trained on massive amounts of text data
+
+Large - Models have bilions of parameters
+Language models - These models do wide range of NLP (natural language processing) tasks: Question answering, translation, sentiment analysis, etc.
+                  These models are also single modal models, i.e. their input and output is only text data
+
+
+LLM vs Earlier NLP models:
+
+LLM can do wide range of NLP tasks as mentioned above.
+NLP models - designed for specific tasks like language translation, etc.
+
+For eg: Drafting custom emails with minimal pre-text (prompts)
+
+
+LLM primary building blocks:
+
+    Transformers - Attention is all you Need
+
+
+AI --> ML --> DL --> Gen AI --> LLM
+
+
+Applications of LLM (main categories):
+
+1. Chatbots / virtual assistants
+2. Machine translation - language to language translation
+3. Novel text generation - email, etc.
+4. Sentiment analysis - +ve/-ve
+5. Content creation - stories based on prompts, code generation
+
+
+Stages of Building LLMs: Pretraining + Finetuning
+
+Pretraining - Training the model on large dataset (usually millions of words)
+
+              Underlying LLM model can perform tasks without ever training on them. For example, performance on tasks like picking the right answer to a miltiple choice question steadily increases as the
+              underlying LLM improves on task which it was originally trained on i.e. to complete the sentence.
+
+Finetuning - Refinement of model by training on focused smaller dataset. It performs much better on that domain/dataset.
+
+
+Data(Internet Text, books, research artifacts, etc) --> Train --> Pretrained LLM (Foundation model) --> Finetuning --> Finetuned LLM (trained specifically on labelled focused dataset)
+Pretraining is done on unlabelled data (unsupervised learning) - also called auto regression learning. i.e. it uses the next word as the lable for training.
+
+
+Steps for building a LLM:
+
+1. Train on a large corups of text data(raw text). raw text = no labelling
+    First training stage of LLM is also called Pretraining. Creating an initial pretrained LLM (based/Foundational model)
+
+2. Finetuning LLM model on labelled data. 2 categories of finetuning: Instruction finetuing, finetuning for classification.
+
+
+
