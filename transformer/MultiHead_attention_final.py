@@ -35,6 +35,7 @@ class MultiHeadAttention(nn.Module):
         values = values.view(b, num_tokens, self.num_heads, self.head_dim)
 
         # Transpose: (b, num_tokens, num_heads, head_dim)  --> (b, num_heads, num_tokens, head_dim)
+        # This is done so that each attention head can see some part of the entire input sequence.
         queries = queries.transpose(1, 2)
         keys = keys.transpose(1, 2)
         values = values.transpose(1, 2)
@@ -102,7 +103,7 @@ def main():
 
     # defining vocab and vector embedding dim size
     vocab = 50267 # gpt-2 has 50267 words/tokens
-    output_dim = 6 # gpt-2 has 748 dimension size. for our example, we will restrict to 3.
+    output_dim = 6 # gpt-2 has 748 dimension size. for our example, we will restrict to 6.
 
     # creating dictionary
     embedding_layer = nn.Embedding(vocab, output_dim)
@@ -111,7 +112,7 @@ def main():
     tensors = torch.tensor(tokenized_sentence)
     print("tokens converted into tensors: ", tensors)
 
-    # obtaining the vector embedding of the sentence based on tokens
+    # obtaining the vector embedding of the sentence from the dictionary
     vector_embeddings = embedding_layer(tensors)
     print("3d dims vector embeddings: ", vector_embeddings.shape)
 
